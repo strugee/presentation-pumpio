@@ -13,6 +13,129 @@ html
 
 			section
 				h1 Pump.io + Community = ♥
+				h3.bullet Alex Jordan
+			
+			section
+				h2.bullet Let's talk about moi
+				h3.bullet Arch Linux
+				h3.bullet Emacs
+				h3.bullet Git
+				h3.bullet zsh
+				h3.bullet Node.js
+				h3.bullet Firefox
+
+			section
+				h2.bullet Also about moi
+				h3.bullet Radical FLOSS zealot
+				h3.bullet Self-hoster
+				h3.bullet Pump.io core contributor
+				h3.bullet High school senior
+				h3.bullet he/him
+
+			section
+				h2.bullet Let's talk about this presentation
+				h3.bullet Originally a lightning talk (5 minutes -> 50 minutes)
+				h3.bullet What & why of Pump.io
+				h3.bullet Using it
+				h3.bullet Brand-new community (+ history)
+				
+			section
+				h2.bullet What
+				h3.bullet Social network
+				h3.bullet Federated
+				h3.bullet Successor to StatusNet (aka GNU Social)
+				h3.bullet That thing that runs identi.ca
+				
+			section
+				h2.bullet Pump.io != StatusNet++
+				h3.bullet Both written by Evan Prodromou
+				h3.bullet StatusNet was his first social project
+				h3.bullet identi.ca circa March-ish 2013
+				h3.bullet Very complex
+				h3.bullet Codebase problem & protocol problem
+				h3.bullet (Side note: Apache 2.0 vs. AGPL)
+
+			section
+				h2.bullet StatusNet protocol
+				h3.bullet (Fair warning: this is Long Before My Time™)
+				h3.bullet OStatus
+				h3.bullet Atom (status update feed)
+				h3.bullet PubSubHubbub (post push)
+				h3.bullet Salmon (comment distribution)
+				h3.bullet ActivityStreams (favorites, etc.)
+
+			section
+				h2.bullet Let's talk Salmon
+				h3.bullet Just as an example.
+				h3.bullet Comment distribution
+				h3.bullet Based on Atom/RSS
+				h3.bullet Data is POSTed back to an endpoint URL in original post
+				h3.bullet Turns out this is overkill
+
+			section
+				h2.bullet StatusNet code problems
+				h3.bullet Everything and the kitchen sink
+				h3.bullet Twitter cross-posting
+				h3.bullet URL shortening
+				h3.bullet Publish updates over XMPP
+				h3.bullet Content embedding (think YouTube)
+				h3.bullet A lot of this had custom server-side stuff
+
+			section
+				h2.bullet 140 characters
+				h3.bullet Looked like Twitter
+				h3.bullet Artificial limits
+				h3.bullet Eventually evolved to support pictures, etc.
+				h3.bullet AKA: understood more and more types of ActivityStreams
+				
+			section.emphatic(data-bespoke-backdrop='emphatic')
+				h2 Enter Pump.io
+
+			section.emphatic(data-bespoke-backdrop='emphatic')
+				h3
+					quote I post something and my followers see it. That's the rough idea behind the pump. 
+					a(href='https://github.com/e14n/pump.io#whats-it-for') - <code>README.md</code>
+	
+			section
+				h2.bullet In other words:
+				h3.bullet Pump.io is just an ActivityStreams distribution engine
+
+			section
+				h2.bullet ActivityStreams
+				h3.bullet Usually JSON
+				h3.bullet Actor, verb and object (+ optional target)
+				
+			section
+				pre
+					code.language-json.
+						{
+						&nbsp;&nbsp;&nbsp;&nbsp;"published": "2011-02-10T15:04:55Z",
+						&nbsp;&nbsp;&nbsp;&nbsp;"actor": {
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url": "http://example.org/martin",
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"objectType": "person",
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": "tag:example.org,2011:martin",
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"image": {
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url": "http://example.org/martin/image",
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"width": 250,
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"height": 250
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"displayName": "Martin Smith"
+						&nbsp;&nbsp;&nbsp;&nbsp;},
+						&nbsp;&nbsp;&nbsp;&nbsp;"verb": "post",
+						&nbsp;&nbsp;&nbsp;&nbsp;"object" : {
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url": "http://example.org/blog/2011/02/entry",
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": "tag:example.org,2011:abc123/xyz"
+						&nbsp;&nbsp;&nbsp;&nbsp;},
+						&nbsp;&nbsp;&nbsp;&nbsp;"target" : {
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url": "http://example.org/blog/",
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"objectType": "blog",
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": "tag:example.org,2011:abc123",
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"displayName": "Martin's Blog"
+						&nbsp;&nbsp;&nbsp;&nbsp;}
+						}
+
+			section
+				h2.bullet The API
 
 			section
 				h2 Keyboard Interaction
@@ -66,6 +189,6 @@ html
 				ul
 					li
 						strong Enjoy! :)
-						a(href='http://twitter.com/markdalgleish')	-@markdalgleish
+						a(href='http://twitter.com/markdalgleish') 	-@markdalgleish
 
 		script(src='build/build.js')
