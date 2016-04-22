@@ -40,7 +40,7 @@ html
 				h3.bullet Brand-new community (+ history)
 				
 			section
-				h2.bullet What
+				h2.bullet The "what & why"
 				h3.bullet Social network
 				h3.bullet Federated
 				h3.bullet Successor to StatusNet (aka GNU Social)
@@ -50,7 +50,7 @@ html
 				h2.bullet Pump.io != StatusNet++
 				h3.bullet Both written by Evan Prodromou
 				h3.bullet StatusNet was his first social project
-				h3.bullet identi.ca circa March-ish 2013
+				h3.bullet identi.ca circa July-ish 2013
 				h3.bullet Very complex
 				h3.bullet Codebase problem & protocol problem
 				h3.bullet (Side note: Apache 2.0 vs. AGPL)
@@ -69,12 +69,13 @@ html
 				h3.bullet Just as an example.
 				h3.bullet Comment distribution
 				h3.bullet Based on Atom/RSS
-				h3.bullet Data is POSTed back to an endpoint URL in original post
+				h3.bullet Data is <code>POST</code>ed back to an endpoint URL in original post
 				h3.bullet Turns out this is overkill
 
 			section
 				h2.bullet StatusNet code problems
 				h3.bullet Everything and the kitchen sink
+				h3.bullet OpenID
 				h3.bullet Twitter cross-posting
 				h3.bullet URL shortening
 				h3.bullet Publish updates over XMPP
@@ -136,7 +137,27 @@ html
 
 			section
 				h2.bullet The API
+				h3.bullet OAuth 1.0
+				h3.bullet Post activities to the user's outbox
+				h3.bullet Read activities from the user's inbox
+				
+			section
+				h2.bullet Example: let's post a note
+				h3.bullet <code>POST</code> to my outbox
+				h3.bullet Pump.io <code>POST</code>s to my follower's inboxes
 
+			section
+				h2.bullet Generic ActivityStreams distribution
+				h3.bullet <a href="https://openfarmgame.com/">OpenFarmGame</a>
+				h3.bullet Implements custom verbs and objects
+				h3.bullet Pump.io distributes them, no problem
+				h3.bullet Generic, extensible social server
+
+			section.emphatic(data-bespoke-backdrop='emphatic')
+				h3
+					quote I post something and my followers see it. That's the rough idea behind the pump. 
+					a(href='https://github.com/e14n/pump.io#whats-it-for') - <code>README.md</code>
+	
 			section
 				h2 Keyboard Interaction
 				h3 Powered by <a href="https://github.com/markdalgleish/bespoke-keys">bespoke-keys</a>
