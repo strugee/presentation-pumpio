@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Pump.io + Community = ♥</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article>
+      <section>
+        <h1>Pump.io + Community = ♥</h1>
+        <h3 class="bullet">Alex Jordan</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Let's talk about moi</h2>
+        <h3 class="bullet">Arch Linux</h3>
+        <h3 class="bullet">Emacs</h3>
+        <h3 class="bullet">Git</h3>
+        <h3 class="bullet">zsh</h3>
+        <h3 class="bullet">Node.js</h3>
+        <h3 class="bullet">Firefox</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Also about moi</h2>
+        <h3 class="bullet">Radical FLOSS zealot</h3>
+        <h3 class="bullet">Self-hoster</h3>
+        <h3 class="bullet">Pump.io core contributor</h3>
+        <h3 class="bullet">High school senior</h3>
+        <h3 class="bullet">he/him</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Let's talk about this presentation</h2>
+        <h3 class="bullet">Originally a lightning talk (5 minutes -> 60 minutes)</h3>
+        <h3 class="bullet">What & why of Pump.io</h3>
+        <h3 class="bullet">Using it</h3>
+        <h3 class="bullet">Brand-new community (+ history)</h3>
+      </section>
+      <section>
+        <h2 class="bullet">The "what & why"</h2>
+        <h3 class="bullet">Social network</h3>
+        <h3 class="bullet">Federated</h3>
+        <h3 class="bullet">Successor to StatusNet (aka GNU Social)</h3>
+        <h3 class="bullet">That thing that runs identi.ca</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Pump.io != StatusNet++</h2>
+        <h3 class="bullet">Both written by Evan Prodromou</h3>
+        <h3 class="bullet">StatusNet was his first social project</h3>
+        <h3 class="bullet">identi.ca circa July-ish 2013</h3>
+        <h3 class="bullet">Very complex</h3>
+        <h3 class="bullet">Codebase problem & protocol problem</h3>
+        <h3 class="bullet">(Side note: Apache 2.0 vs. AGPL)</h3>
+      </section>
+      <section>
+        <h2 class="bullet">StatusNet protocol</h2>
+        <h3 class="bullet">(Fair warning: this is Long Before My Time™)</h3>
+        <h3 class="bullet">OStatus</h3>
+        <h3 class="bullet">Atom (status update feed)</h3>
+        <h3 class="bullet">PubSubHubbub (post push)</h3>
+        <h3 class="bullet">Salmon (comment distribution)</h3>
+        <h3 class="bullet">ActivityStreams (favorites, etc.)</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Let's talk Salmon</h2>
+        <h3 class="bullet">Just as an example.</h3>
+        <h3 class="bullet">Comment distribution</h3>
+        <h3 class="bullet">Based on Atom/RSS</h3>
+        <h3 class="bullet">Data is <code>POST</code>ed back to an endpoint URL in original post</h3>
+        <h3 class="bullet">Turns out this is overkill</h3>
+      </section>
+      <section>
+        <h2 class="bullet">StatusNet code problems</h2>
+        <h3 class="bullet">Everything and the kitchen sink</h3>
+        <h3 class="bullet">OpenID</h3>
+        <h3 class="bullet">Twitter cross-posting</h3>
+        <h3 class="bullet">URL shortening</h3>
+        <h3 class="bullet">Publish updates over XMPP</h3>
+        <h3 class="bullet">Content embedding (think YouTube)</h3>
+        <h3 class="bullet">A lot of this had custom server-side stuff</h3>
+      </section>
+      <section>
+        <h2 class="bullet">140 characters</h2>
+        <h3 class="bullet">Looked like Twitter</h3>
+        <h3 class="bullet">Artificial limits</h3>
+        <h3 class="bullet">Eventually evolved to support pictures, etc.</h3>
+        <h3 class="bullet">AKA: understood more and more types of ActivityStreams</h3>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic">
+        <h2>Enter Pump.io</h2>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic">
+        <h3>
+          <quote>I post something and my followers see it. That's the rough idea behind the pump. </quote><a href="https://github.com/e14n/pump.io#whats-it-for">- <code>README.md</code></a>
+        </h3>
+      </section>
+      <section>
+        <h2 class="bullet">In other words:</h2>
+        <h3 class="bullet">Pump.io is just an ActivityStreams distribution engine</h3>
+      </section>
+      <section>
+        <h2 class="bullet">ActivityStreams</h2>
+        <h3 class="bullet">Usually JSON</h3>
+        <h3 class="bullet">Actor, verb and object (+ optional target)</h3>
+      </section>
+      <section>
+        <pre><code class="language-json">{
+&nbsp;&nbsp;&nbsp;&nbsp;"published": "2011-02-10T15:04:55Z",
+&nbsp;&nbsp;&nbsp;&nbsp;"actor": {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url": "http://example.org/martin",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"objectType": "person",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": "tag:example.org,2011:martin",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"image": {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url": "http://example.org/martin/image",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"width": 250,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"height": 250
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"displayName": "Martin Smith"
+&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;"verb": "post",
+&nbsp;&nbsp;&nbsp;&nbsp;"object" : {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url": "http://example.org/blog/2011/02/entry",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": "tag:example.org,2011:abc123/xyz"
+&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;"target" : {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url": "http://example.org/blog/",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"objectType": "blog",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": "tag:example.org,2011:abc123",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"displayName": "Martin's Blog"
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</code></pre>
+      </section>
+      <section>
+        <h2 class="bullet">The API</h2>
+        <h3 class="bullet">OAuth 1.0</h3>
+        <h3 class="bullet">Post activities to the user's outbox</h3>
+        <h3 class="bullet">Read activities from the user's inbox</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Example: let's post a note</h2>
+        <h3 class="bullet"><code>POST</code> to my outbox</h3>
+        <h3 class="bullet">Pump.io <code>POST</code>s to my follower's inboxes</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Generic ActivityStreams distribution</h2>
+        <h3 class="bullet"><a href="https://openfarmgame.com/">OpenFarmGame</a></h3>
+        <h3 class="bullet">Implements custom verbs and objects</h3>
+        <h3 class="bullet">Pump.io distributes them, no problem</h3>
+        <h3 class="bullet">Generic, extensible social server</h3>
+      </section>
+      <section data-bespoke-backdrop="emphatic" class="emphatic">
+        <h3>
+          <quote>I post something and my followers see it. That's the rough idea behind the pump. </quote><a href="https://github.com/e14n/pump.io#whats-it-for">- <code>README.md</code></a>
+        </h3>
+      </section>
+      <section>
+        <h2 class="bullet">Community</h2>
+        <h3 class="bullet">June 22, 2014</h3>
+        <h3 class="bullet">Evan pushes the last commit for over a year</h3>
+      </section>
+      <section><a href="https://github.com/e14n/pump.io/commit/1029ac71b94dec2b51f6b2aa461b5b2a514e585a"><img class="github-img" src="images/evan-final-commit.png" alt="Evan's final commit on GitHub" /></a></section>
+      <section>
+        <h2 class="bullet">The fork</h2>
+        <h3 class="bullet">Late August: I send <a href="https://pump.strugee.net/alex/note/iIVANakWRF6eeFeg-ZPogQ">this note</a> to Evan, asking him to nominate a new maintainer</h3>
+        <h3 class="bullet">Less than two weeks later, I fork</h3>
+        <h3 class="bullet">First commit is September 2, 2016</h3>
+      </section>
+      <section><a href="https://github.com/e14n/pump.io/commit/1029ac71b94dec2b51f6b2aa461b5b2a514e585a"><img class="github-img" src="images/strugee-first-commit.png" alt="Evan's final commit on GitHub" /></a></section>
+      <section>
+        <h2 class="bullet">Bringing it home</h2>
+        <h3 class="bullet">September 21, 2015: <a href="https://e14n.com/evan/note/PfncqpQ4TpWliZTQo-jjCQ">Evan wants to hand off the code to the community</a></h3>
+        <h3 class="bullet"><a href="https://github.com/e14n/pump.io/wiki/Meeting-2015-09-21">Informal meeting that same day</a></h3>
+        <h3 class="bullet">Evan grants admin rights to cwebber and jpope</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Since then...</h2>
+        <h3 class="bullet">The community is small but strong</h3>
+        <h3 class="bullet"><a href="https://github.com/e14n/pump.io/wiki/Community#next-meeting">Meetings</a> third Friday of the month</h3>
+        <h3 class="bullet">PRs get merged now</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Other awesome stuff</h2>
+        <h3 class="bullet"><a href="https://github.com/e14n/pump.io/wiki/Conservancy-application">Conservancy</a></h3>
+        <h3 class="bullet">Node transition</h3>
+        <h3 class="bullet"><a href="https://github.com/e14n/pump.io/wiki/Community#community-accounts-communication">Community accounts</a></h3>
+        <h3 class="bullet">MediaGoblin <a href="http://dustycloud.org/misc/mediagoblin_federation_first_demo.png">federates with us</a>!</h3>
+        <h3 class="bullet"><a href="http://www.w3.org/wiki/Socialwg">SocialWG</a> (lots of Editors Drafts and beyond)</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Looking forward</h2>
+        <h3 class="bullet">Bug squashing</h3>
+        <h3 class="bullet">Reduce technical debt</h3>
+        <h3 class="bullet">Upgrade dependencies</h3>
+        <h3 class="bullet"><a href="https://github.com/e14n/pump.io/issues?q=is%3Aopen+is%3Aissue+milestone%3A0.3.1">0.3.1</a></h3>
+      </section>
+      <section>
+        <h2 class="bullet">Join us!</h2>
+        <h3 class="bullet"><code>#pump.io</code> on Freenode</h3>
+        <h3 class="bullet">XMPP: <a href="xmpp:pump.io@muc.jappix.com?join"><code>pump.io@muc.jappix.com</code></a></h3>
+        <h3 class="bullet"><a href="https://github.com/e14n/pump.io">e14n/pump.io</a> on GitHub</h3>
+        <h3 class="bullet"><a href="https://twitter.com/pumpdotio">@pumpdotio</a> or (even better) <a href="https://pumpit.info/pumpio">pumpio@pumpit.info</a></h3>
+        <h3 class="bullet">Sign up for a hosted node...</h3>
+        <h3 class="bullet">...or run your own!</h3>
+      </section>
+      <section>
+        <h2 class="bullet">Thanks!</h2>
+        <h3 class="bullet">I've been AJ</h3>
+        <h3 class="bullet"><a href="mailto:alex@strugee.net">alex@strugee.net</a> (email & XMPP)</h3>
+        <h3 class="bullet"><a href="https://pump.strugee.net/alex">alex@pump.strugee.net</a></h3>
+        <h3 class="bullet"><a href="https://twitter.com/strugee2">@strugee2</a> (if you must)</h3>
+        <h3 class="bullet"><a href="https://github.com/strugee">strugee</a> on GitHub</h3>
+        <h3 class="bullet"><a href="https://strugee.net">strugee.net</a></h3>
+      </section>
+      <section>
+        <h2 class="bullet">Access this presentation again</h2>
+        <h3><a href="https://strugee.net/presentation-pumpio">https://strugee.net/presentation-pumpio</a></h3>
+        <p><img src="images/qr.png" alt="QR code to presentation URL" width="200" height="200"></p>
+        <h4>Or, <a href="https://github.com/strugee/presentation-pumpio">check out the source</a>.</h4>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
