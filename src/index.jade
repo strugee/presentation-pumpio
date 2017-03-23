@@ -1,3 +1,4 @@
+// TODO remove a lot of the bullets
 doctype html
 html
 	head
@@ -29,21 +30,21 @@ html
 				h3.bullet Radical FLOSS zealot
 				h3.bullet Self-hoster
 				h3.bullet Pump.io core contributor
-				h3.bullet Gap year @ the #[a(href='https://recurse.com') Recurse Center]
+				h3.bullet Gap year (mostly) @ the #[a(href='https://recurse.com') Recurse Center]
 				h3.bullet he/him
 
 			section
-				h2.bullet Let's talk about this presentation
-				h3.bullet What & why of Pump.io
+				h2.bullet Let's talk about this session
+				h3.bullet What & why of pump.io
 				h3.bullet Using it
-				h3.bullet Brand-new community (+ history)
+				h3.bullet New community (+ history)
 				
 			section
 				h2.bullet The "what & why"
 				h3.bullet Social network
 				h3.bullet Federated
 				h3.bullet Successor to StatusNet (aka GNU Social)
-				h3.bullet That thing that runs identi.ca
+				h3.bullet "That thing that runs identi.ca"
 				
 			section
 				h2.bullet Pump.io != StatusNet++
@@ -55,26 +56,26 @@ html
 				h3.bullet (Side note: Apache 2.0 vs. AGPL)
 
 			section
-				h2.bullet StatusNet protocol
-				h3.bullet (Fair warning: this is Long Before My Time™)
-				h3.bullet OStatus
-				h3.bullet Atom (status update feed)
-				h3.bullet PubSubHubbub (post push)
-				h3.bullet Salmon (comment distribution)
-				h3.bullet ActivityStreams (favorites, etc.)
+				h2 StatusNet protocol
+				h3 (Fair warning: this is Long Before My Time™)
+				h3 OStatus
+				h3 Atom (status update feed)
+				h3 PubSubHubbub (post push)
+				h3 Salmon (comment distribution)
+				h3 ActivityStreams (favorites, etc.)
 
 			section
-				h2.bullet Let's talk Salmon
-				h3.bullet Just as an example.
-				h3.bullet Comment distribution
-				h3.bullet Based on Atom/RSS
-				h3.bullet Data is <code>POST</code>ed back to an endpoint URL in original post
-				h3.bullet Turns out this is overkill
+				h2 Let's talk Salmon
+				h3 Just as an example.
+				h3 Comment distribution
+				h3 Based on Atom/RSS
+				h3 Data is <code>POST</code>ed back to an endpoint URL in original post
+				h3 Turns out this is overkill
 
 			section
-				h2.bullet StatusNet code problems
-				h3.bullet Everything and the kitchen sink
-				h3.bullet OpenID
+				h2 StatusNet code problems
+				h3 Everything and the kitchen sink
+				h3 OpenID
 				h3.bullet Twitter cross-posting
 				h3.bullet URL shortening
 				h3.bullet Publish updates over XMPP
@@ -83,13 +84,13 @@ html
 
 			section
 				h2.bullet 140 characters
-				h3.bullet Looked like Twitter
-				h3.bullet Artificial limits
-				h3.bullet Eventually evolved to support pictures, etc.
-				h3.bullet AKA: understood more and more types of ActivityStreams
+				h3 Looked like Twitter
+				h3 Artificial limits
+				h3 Eventually evolved to support pictures, etc.
+				h3 AKA: understood more and more types of ActivityStreams
 				
 			section.emphatic(data-bespoke-backdrop='emphatic')
-				h2 Enter Pump.io
+				h2 Enter pump.io
 
 			section.emphatic(data-bespoke-backdrop='emphatic')
 				h3
@@ -97,13 +98,13 @@ html
 					a(href='https://github.com/pump-io/pump.io#whats-it-for') - <code>README.md</code>
 	
 			section
-				h2.bullet In other words:
-				h3.bullet Pump.io is just an ActivityStreams distribution engine
+				h2 In other words:
+				h3 Pump.io is just an ActivityStreams distribution engine
 
 			section
-				h2.bullet ActivityStreams
-				h3.bullet Usually JSON
-				h3.bullet Actor, verb and object (+ optional target)
+				h2 ActivityStreams
+				h3 Usually JSON
+				h3 Actor, verb and object (+ optional target)
 				
 			section
 				pre
@@ -135,22 +136,23 @@ html
 						}
 
 			section
-				h2.bullet The API
-				h3.bullet OAuth 1.0
-				h3.bullet Post activities to the user's outbox
-				h3.bullet Read activities from the user's inbox
-				
-			section
-				h2.bullet Example: let's post a note
-				h3.bullet <code>POST</code> to my outbox
-				h3.bullet Pump.io <code>POST</code>s to my follower's inboxes
+				h2 The API
+				h3 OAuth 1.0
+				h3 Post activities to the user's outbox
+				h3 Read activities from the user's inbox
+				h3 Major/minor stream differentiation
 
 			section
-				h2.bullet Generic ActivityStreams distribution
-				h3.bullet <a href="https://openfarmgame.com/">OpenFarmGame</a>
-				h3.bullet Implements custom verbs and objects
-				h3.bullet Pump.io distributes them, no problem
-				h3.bullet Generic, extensible social server
+				h2 Example: let's post a note
+				h3 <code>POST</code> to my outbox
+				h3 Pump.io <code>POST</code>s to my follower's inboxes
+
+			section
+				h2 Generic ActivityStreams distribution
+				h3 <a href="https://openfarmgame.com/">OpenFarmGame</a>
+				h3 Implements custom verbs and objects
+				h3 Pump.io distributes them, no problem
+				h3 Generic, extensible social server
 
 			section.emphatic(data-bespoke-backdrop='emphatic')
 				h3
@@ -158,69 +160,80 @@ html
 					a(href='https://github.com/pump-io/pump.io#whats-it-for') - <code>README.md</code>
 
 			section
-				h2.bullet Community
-				h3.bullet June 22, 2014
-				h3.bullet Evan pushes the last commit for over a year
+				h2 Community
+				h3 June 22, 2014
+				h3 Evan pushes the last commit for over a year
 
 			section
+				// TODO: quality
 				a(href='https://github.com/pump-io/pump.io/commit/1029ac71b94dec2b51f6b2aa461b5b2a514e585a') <img class="github-img" src="images/evan-final-commit.png" alt="Evan's final commit on GitHub" />
 
 			section
-				h2.bullet The fork
-				h3.bullet Late August: I send <a href="https://pump.strugee.net/alex/note/iIVANakWRF6eeFeg-ZPogQ">this note</a> to Evan, asking him to nominate a new maintainer
-				h3.bullet Less than two weeks later, I fork
-				h3.bullet First commit is September 2, 2016
+				h2 The fork
+				h3 Late August: I send <a href="https://pump.strugee.net/alex/note/iIVANakWRF6eeFeg-ZPogQ">this note</a> to Evan, asking him to nominate a new maintainer
+				h3 I fork <2 weeks later
+				h3 First commit is September 2, 2016
 
 			section
 				a(href='https://github.com/pump-io/pump.io/commit/1029ac71b94dec2b51f6b2aa461b5b2a514e585a') <img class="github-img" src="images/strugee-first-commit.png" alt="Evan's final commit on GitHub" />
 			
 			section
-				h2.bullet Bringing it home
-				h3.bullet September 21, 2015: <a href="https://e14n.com/evan/note/PfncqpQ4TpWliZTQo-jjCQ">Evan wants to hand off the code to the community</a>
-				h3.bullet <a href="https://github.com/pump-io/pump.io/wiki/Meeting-2015-09-21">Informal meeting that same day</a>
-				h3.bullet Evan grants admin rights to cwebber and jpope
+				h2 Bringing it home
+				h3 September 21, 2015: <a href="https://e14n.com/evan/note/PfncqpQ4TpWliZTQo-jjCQ">Evan wants to hand off the code to the community</a>
+				h3 <a href="https://github.com/pump-io/pump.io/wiki/Meeting-2015-09-21">Informal meeting that same day</a>
+				h3 Evan grants admin rights to cwebber and jpope
 				
 			section
-				h2.bullet Since then...
-				h3.bullet The community is small but strong
-				h3.bullet <a href="https://github.com/pump-io/pump.io/wiki/Community#next-meeting">Meetings</a> third Friday of the month
-				h3.bullet PRs get merged now
+				h2 Since then...
+				h3 I become primary maintainer
+				h3 Small but strong community
+				h3 <a href="https://github.com/pump-io/pump.io/wiki/Community#next-meeting">Meetings</a> every third Friday of the month
+				h3 PRs get merged now
 				
 			section
-				h2.bullet Other awesome stuff
-				h3.bullet <a href="https://github.com/pump-io/pump.io/wiki/Conservancy-application">Conservancy</a>
-				h3.bullet Node transition
-				h3.bullet <a href="https://github.com/pump-io/pump.io/wiki/Community#community-accounts-communication">Community accounts</a>
-				h3.bullet MediaGoblin <a href="http://dustycloud.org/misc/mediagoblin_federation_first_demo.png">federates with us</a>!
-				h3.bullet <a href="http://www.w3.org/wiki/Socialwg">SocialWG</a> (lots of Editors Drafts and beyond)
+				h2 Releases
+				h3 Focus so far: reducing technical debt
+				h3 Almost 0 outdated dependencies, perf improvements, bug fixes
+				h3 Releases every month, alternating betas/stables
+				h3 4.0 entering beta April 1
 
 			section
-				h2.bullet Looking forward
-				h3.bullet Bug squashing
-				h3.bullet Reduce technical debt
-				h3.bullet Upgrade dependencies
-				h3.bullet <a href="https://github.com/pump-io/pump.io/issues?q=is%3Aopen+is%3Aissue+milestone%3A0.3.1">0.3.1</a>
-				
-			section
-				h2.bullet Join us!
-				h3.bullet <code>#pump.io</code> on Freenode
-				h3.bullet XMPP: <a href="xmpp:pump.io@muc.jappix.com?join"><code>pump.io@muc.jappix.com</code></a>
-				h3.bullet <a href="https://github.com/pump-io/pump.io">pump-io/pump.io</a> on GitHub
-				h3.bullet <a href="https://twitter.com/pumpdotio">@pumpdotio</a> or (even better) <a href="https://pumpit.info/pumpio">pumpio@pumpit.info</a>
-				h3.bullet Sign up for a hosted node...
-				h3.bullet ...or run your own!
-				
-			section
-				h2.bullet Thanks!
-				h3.bullet I've been AJ
-				h3.bullet <a href="mailto:alex@strugee.net">alex@strugee.net</a> (email & XMPP)
-				h3.bullet <a href="https://pump.strugee.net/alex">alex@pump.strugee.net</a>
-				h3.bullet <a href="https://twitter.com/strugee2">@strugee2</a> (if you must)
-				h3.bullet <a href="https://github.com/strugee">strugee</a> on GitHub
-				h3.bullet <a href="https://strugee.net">strugee.net</a>
+				h2 Other awesome stuff
+				h3 <a href="https://github.com/pump-io/pump.io/wiki/Conservancy-application">Conservancy</a>
+				h3 Node transition
+				h3 <a href="https://github.com/pump-io/pump.io/wiki/Community#community-accounts-communication">Community accounts</a>
+				h3 MediaGoblin <a href="http://dustycloud.org/misc/mediagoblin_federation_first_demo.png">federates with us</a>!
+				// TODO confirm this
+				h3 <a href="http://www.w3.org/wiki/Socialwg">SocialWG</a> (ActivityPub in PR, ActivityStreams 2.0 in PR)
 
 			section
-				h2.bullet Access this presentation again
+				h2 Future
+				h3 ActivityPub support
+				h3 Out-of-the-box HTTPS
+				h3 More security improvements
+				h3 Packaging
+				h3 Bugfixes
+				
+			section
+				h2 Join us!
+				h3 <code>#pump.io</code> on Freenode
+				h3 XMPP: <a href="xmpp:pump.io@muc.jappix.com?join"><code>pump.io@muc.jappix.com</code></a>
+				h3 <a href="https://github.com/pump-io/pump.io">pump-io/pump.io</a> on GitHub
+				h3 <a href="https://twitter.com/pumpdotio">@pumpdotio</a> or (even better) <a href="https://pumpit.info/pumpio">pumpio@pumpit.info</a>
+				h3 Sign up for a hosted node...
+				h3 ...or run your own!
+				
+			section
+				h2 Thanks!
+				h3 I've been AJ
+				h3 <a href="mailto:alex@strugee.net">alex@strugee.net</a> (email & XMPP)
+				h3 <a href="https://pump.strugee.net/alex">alex@pump.strugee.net</a>
+				h3 <a href="https://twitter.com/strugee2">@strugee2</a> (if you must)
+				h3 <a href="https://github.com/strugee">strugee</a> on GitHub
+				h3 <a href="https://strugee.net">strugee.net</a>
+
+			section
+				h2 Access this presentation again
 				h3 <a href="https://strugee.net/presentation-pumpio/libreplanet/">https://strugee.net/presentation-pumpio/libreplanet/</a>
 				p
 					// TODO: fix this for the new URL
