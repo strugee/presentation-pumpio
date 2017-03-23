@@ -17,7 +17,8 @@ var pkg = require('./package.json'),
 	opn = require('opn'),
 	ghpages = require('gh-pages'),
 	path = require('path'),
-	isDist = process.argv.indexOf('serve') === -1;
+	isDist = process.argv.indexOf('serve') === -1,
+	pdf = require('bespoke-pdf');
 
 gulp.task('js', ['clean:js'], function() {
 	return gulp.src('src/scripts/main.js')
@@ -59,6 +60,11 @@ gulp.task('images', ['clean:images'], function() {
 		.pipe(connect.reload());
 });
 
+gulp.task('pdf', ['connect'], function() {
+	return pdf(pkg.name + '.pdf')
+	          .pipe(gulp.dest('dist'));
+});
+
 gulp.task('clean', function(done) {
 	del('dist', done);
 });
@@ -77,6 +83,10 @@ gulp.task('clean:css', function(done) {
 
 gulp.task('clean:images', function(done) {
 	del('dist/images', done);
+});
+
+gulp.task('clean:pdf', function() {
+	del('dist/' + pkg.name + '.pdf');
 });
 
 gulp.task('connect', ['build'], function() {
