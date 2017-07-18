@@ -92,7 +92,8 @@ gulp.task('clean:pdf', function() {
 gulp.task('connect', ['build'], function() {
 	connect.server({
 		root: 'dist',
-		livereload: true
+		livereload: true,
+                port: process.env.PORT
 	});
 });
 
